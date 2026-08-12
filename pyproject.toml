@@ -1,0 +1,31 @@
+[project]
+name = "identify_broadly_effective"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "core",
+    "synthetic",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+core = { workspace = true }
+synthetic = { workspace = true }
+
+[tool.uv.workspace]
+members = [
+    "packages/core",
+    "packages/synthetic",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "ruff",
+    "mypy",
+    "ipykernel",
+    "pandas-stubs",
+    "scipy-stubs",
+]
